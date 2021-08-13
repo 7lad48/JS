@@ -18,3 +18,22 @@ switch (carColor) {
     break
     default: console.log('car color is undefined');
 }
+var carName ='Ford'
+var carYear=2015
+var personYear=1990
+
+function calculateAge(year) {
+    var currentYear=2021
+    var result = currentYear-year
+    return result
+}    
+function checkAge(year) {
+    if (calculateAge(year) <10){
+        console.log('возраст меньше 10 лет')
+    } else {
+        console.log('возраст больше 10 лет')
+    }
+}
+
+checkAge(carYear)
+checkAge(personYear)
