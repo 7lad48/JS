@@ -18,22 +18,19 @@ switch (carColor) {
     break
     default: console.log('car color is undefined');
 }
-var carName ='Ford'
-var carYear=2015
-var personYear=1990
+var carYear = 2017
+var personYear = 2009
 
-function calculateAge(year) {
+function countAge(year){
     var currentYear=2021
     var result = currentYear-year
     return result
-}    
-function checkAge(year) {
-    if (calculateAge(year) <10){
-        console.log('возраст меньше 10 лет')
+}
+function compareYears(year, name, compareTo) {
+    if (countAge(year) < compareTo) {
+        console.log('возраст '+name+' меньше '+compareTo+' лет.')
     } else {
-        console.log('возраст больше 10 лет')
+        console.log('возраст '+name+' больше '+compareTo+' лет.')
     }
 }
-
-checkAge(carYear)
-checkAge(personYear)
+compareYears(carYear,'авто', 7)
