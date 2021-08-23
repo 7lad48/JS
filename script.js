@@ -16,4 +16,9 @@ console.log(h1.textContent)
 let input = document.querySelector('input')
 console.log(input.placeholder)
 input.value= 'yeeeeaa'
+let a = document.querySelector('a')
+let oldHref = a.getAttribute('href')
 
+a.setAttribute('href','https://ya.ru')
+a.setAttribute('title','go to yandex')
+a.textContent='YandeX'
