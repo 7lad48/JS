@@ -1,24 +1,17 @@
-let divs = document.querySelectorAll('div')
-let link = document.querySelector('a')
-for (var i = 0; i < divs.length; i++) {
-    divs[i].addEventListener('click', function(event) {
-        event.stopPropagation()
-        console.log(this.getAttribute('id'))
+/*let ps = document.querySelectorAll('p')
+for (var i = 0; i <ps.length; i++) {
+    ps[i].addEventListener('click', function(event) {
+        event.target.style.color = event.target.style.color === 'blue'
+        ? 'black'
+        : 'blue' 
     })
-}
-
-function handleLinkClick(event) {
-    event.preventDefault()
-    let div = divs[0]
-    /*if (div.style.display === 'none') {
-        div.style.display = 'flex'
-    } else {
-        div.style.display = 'none'
-    }*/
-    div.style.display = div.style.display === 'none' 
-    ? 'flex'  
-    : 'none'
-    
-}
-
-link.addEventListener('click', handleLinkClick)
+}*/
+document.getElementById('wrapper').addEventListener('click', function(event) {
+    let tagName = event.target.tagName.toLowerCase()
+    if (tagName === 'p') {
+        event.target.style.color = 'blue'
+    }
+    if (event.target.classList.contains('color')){
+        event.target.style.color = 'red'
+    }
+})
