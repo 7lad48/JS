@@ -1,23 +1,27 @@
-document.querySelector('#alert').addEventListener('click', function() {
-    alert('You click button!')
+var str = '1,2,3,4,5,6,7,8'
+
+var array = str.split(',')
+
+str2 = array.join(';')
+
+let newArray = array.concat([1,2])
+//console.log(newArray)
+
+let objArr = [
+    {name: 'Max', age: 27},
+    {name: 'Elena', age: 18},
+    {name: 'Victor', age: 20}
+]
+
+var foundPerson = objArr.find(function(person) {
+    return person.age === 20
 })
 
-document.querySelector('#confirm').addEventListener('click', function() {
-    let decision = confirm('Нажать на кнопку? Вы уверены?')
+var oddArray = [1,2,3,4,5,6,7,8,9].filter(function(i) {
+    return i % 2 !==0
+})
 
-    console.log(decision)
-    if(decision) {
-        alert('Вы согласились хо хо')
-    }
+let arrayTwo = array.map(function(i) {
+    return parseInt(i) // i * 2 - получим каждый элемент * 2
+    // интересно, можно ли так? return (i * 2) / 2 вернутся же тоже числа...
 })
-document.querySelector('#prompt').addEventListener('click', function() {
-    let age = prompt('Введите свой возраст', 18)
-    if(age >= 18) {
-        alert('Вам больше 18')
-    } else {
-        alert('еще слишком молоды')
-    }
-})
-console.warn('предупреждаю!')
-console.error('Ошибкааа!')
-console.info('информацияяя')
