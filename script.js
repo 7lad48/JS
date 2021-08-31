@@ -1,27 +1,20 @@
-var str = '1,2,3,4,5,6,7,8'
+let num = 2.1
+console.log(Math.random()) // рандомное число
+console.log(Math.floor(num)) // округление в меньшую сторону, даже 2.9 == 2
+console.log(Math.ceil(num)) // округление в большую 2.1 = 3
 
-var array = str.split(',')
+let person = {
+    name: 'Max',
+    age: 26,
+    car: {
+        model: 'Ford',
+        year: '2008',
+        color: 'Gray'
+    },
+    job: 'Frontend',
+    friends: ['Elena','Igor']
+}
 
-str2 = array.join(';')
+let strObj = JSON.stringify(person) // переводим в JSON - объект в тектовый формат JSON
 
-let newArray = array.concat([1,2])
-//console.log(newArray)
-
-let objArr = [
-    {name: 'Max', age: 27},
-    {name: 'Elena', age: 18},
-    {name: 'Victor', age: 20}
-]
-
-var foundPerson = objArr.find(function(person) {
-    return person.age === 20
-})
-
-var oddArray = [1,2,3,4,5,6,7,8,9].filter(function(i) {
-    return i % 2 !==0
-})
-
-let arrayTwo = array.map(function(i) {
-    return parseInt(i) // i * 2 - получим каждый элемент * 2
-    // интересно, можно ли так? return (i * 2) / 2 вернутся же тоже числа...
-})
+console.log(JSON.parse(strObj)) // обратная операция. Парсим строку в JS объект. т.ж можно в переменную сохр. готовый объект...
